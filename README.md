@@ -1,61 +1,58 @@
 # VUM Documentation Template
 
-A LaTeX template for Vanderbilt University Motorsports documentation, built so
-that a first-year who has never seen LaTeX can produce a document that looks
-like every other document in the archive.
+This template produces Vanderbilt University Motorsports documentation. It
+is written so that a first-year with no LaTeX experience can produce a
+document that matches the rest of the archive.
 
-The idea is **evergreen documentation**: files that outlive the person who
-wrote them. Every document carries a document ID, a revision history, an
-owner, and a review-by date, so two years from now someone can tell at a
-glance whether they are reading something current or something stale.
+The goal is documentation that outlives its authors. Every document carries
+an ID, a revision history, an owner, and a review-by date, so that a reader
+in a later season can tell whether it is still current.
 
 **Background.** The team has lost roughly two decades of accumulated
 knowledge because it was never written down. Setups lived in one person's
 head, results stayed behind in group chats, and more than one fix has been
-rediscovered from scratch. This system exists to rebuild that knowledge. It
-is new for everyone, with leads learning it at the same time as
-first-years, and nothing here assumes prior familiarity.
+rediscovered from scratch. This system exists to rebuild that knowledge. It is new for everyone.
+Leads are learning it at the same time as first-years, and nothing here
+assumes prior familiarity.
 
-**Where to start:**
-
-- **Everyone.** Read `overleaf-intro.tex` (or its PDF) first. It assumes
-  no prior knowledge of Overleaf or LaTeX and ends with a hands-on exercise
-  of about twenty minutes. Keep `CHEATSHEET.md` open while writing.
-- **Leads.** Do the same, then read sections 1, 4, and 5 of this file.
-  Section 5 describes the lead-specific responsibilities.
+Everyone should read `overleaf-intro.tex`, or its PDF, before anything
+else. It assumes no prior knowledge of Overleaf or LaTeX and ends with a
+hands-on exercise of about twenty minutes. After that, keep `CHEATSHEET.md`
+open while writing. Leads should also read sections 1, 4, and 5 of this
+file, of which section 5 describes the lead-specific responsibilities.
 
 ---
 
 ## 1. Getting it into Overleaf
 
-**One-time, by whichever lead owns documentation.** Pick one owner. Any
-lead can do this, and it needs no more Overleaf knowledge than the intro
+The one-time setup below is done by the lead who owns documentation. Any
+lead can do it, and it needs no more Overleaf knowledge than the intro
 guide teaches.
 
 1. Overleaf → **New Project** → **Upload Project** → pick `VUM-doc-template.zip`.
 2. Rename the project to `VUM Documentation Template`.
-3. Menu → **Copy Project** is how everyone else will use it. If your team has
-   an Overleaf group subscription, Menu → **Manage Template** publishes it to
-   the group template gallery instead, which is cleaner.
+3. Everyone else then uses Menu → **Copy Project**. If the team has an
+   Overleaf group subscription, Menu → **Manage Template** publishes it to
+   the group template gallery instead.
 
-**New to Overleaf or LaTeX:** read `overleaf-intro.tex` before anything
-else, either by compiling it or from the PDF in the documentation repo. It
-assumes no prior knowledge and ends by walking you through your member
+Anyone new to Overleaf or LaTeX should read `overleaf-intro.tex` before
+anything else, either by compiling it or from the PDF in the documentation
+repo. It assumes no prior knowledge and ends by walking through the member
 introduction, the first of the two onboarding tasks.
 
 **Every time someone writes a new document:**
 
 1. Open the template project → Menu → **Copy Project**.
-2. Name the copy after the document: `VUM SUS-DR-004 Front Upright`.
+2. Name the copy after the document, as in `VUM SUS-DR-004 Front Upright`.
 3. Delete the starter files you are not using. Keep `overleaf-intro.tex`
    out of your working copy too, since it is reference material rather
    than a starter.
 4. Rename the remaining starter to `main.tex`, right-click it →
    **Set as Main File**.
-5. Fill in the `FILL THIS IN` block at the top and write.
+5. Fill in the `FILL THIS IN` block at the top, then write the body.
 
-Keep one Overleaf project per document, because several documents in one
-project makes their revision histories difficult to separate.
+Keep one Overleaf project per document, because keeping several documents
+in one project makes their revision histories difficult to separate.
 
 **Class options** go on line 1, as in `\documentclass[designreport]{fsaedoc}`.
 The options `designreport`, `testprocedure`, `testreport`, `guide`, and
@@ -135,25 +132,26 @@ revision letter changes.
 
 Under this scheme, `BRK-TP-002` is the second brake test procedure issued.
 
-**Member introductions are the one exception.** They use
-`MI-<year joined>-<SURNAME>`, as in `MI-2026-LU`, because they are the first
-document a new member writes and should not require claiming a number from
-anyone, and a name is already unique. Add a first initial if a cohort has
-two members with the same surname.
+Member introductions are the exception. They use
+`MI-<year joined>-<SURNAME>`, as in `MI-2026-LU`, because they are the
+first document a new member writes and should not require claiming a
+number from anyone. A surname already makes the ID unique, and a first
+initial is added if a cohort has two members with the same surname.
 
-"Subsystem" here means the **area of the car or team the document is
-about**, not a formal team structure. People on a small team work across
+"Subsystem" refers to the area of the car or team the document concerns
+rather than to a formal team structure. People on a small team work across
 several areas, so a code does not need a dedicated group behind it. It
 only needs to be the right category to file the document under.
 
-Keep a single master list of issued IDs in the documentation repo (a plain
-`ids.md` works fine). Claim the number *before* you start writing.
+Keep a single master list of issued IDs in the documentation repo, where
+a plain `ids.md` file is sufficient. Claim the number before starting to
+write.
 
 ---
 
 ## 4. Revisions and status
 
-Add a `\revision{}{}{}{}` line **every time you change a released document.**
+Add a `\revision{}{}{}{}` line every time a released document changes.
 The last line automatically becomes the current revision on the cover, so
 the revision letter is never typed twice.
 
@@ -166,10 +164,10 @@ the revision letter is never typed twice.
 
 | Status       | What it means                                | Watermark    |
 |--------------|----------------------------------------------|--------------|
-| `Draft`      | Being written. Do not build parts from it.   | DRAFT        |
-| `In Review`  | Complete, waiting on approvers.              | IN REVIEW    |
-| `Released`   | Approved. This is the one you work from.     | none         |
-| `Superseded` | A newer document replaced this.              | SUPERSEDED   |
+| `Draft`      | In progress. Parts must not be built from it. | DRAFT        |
+| `In Review`  | Complete and awaiting approval.               | IN REVIEW    |
+| `Released`   | Approved. Work from this version.             | none         |
+| `Superseded` | Replaced by a newer document.                 | SUPERSEDED   |
 
 When you supersede a document, set the old one to `Superseded`, re-export it,
 and put `\supersedes{OLD-ID}` in the new one.
@@ -185,19 +183,18 @@ team-wide with `\reviewwindow{14}` in `teaminfo.tex`. Two consequences
 follow:
 
 - The auto date is stamped at compile time, so it moves whenever the PDF
-  is rebuilt. This is acceptable for drafts, since the archived PDF keeps
-  the date it was built with, but not for released documents.
-- **Released documents should set an explicit `\reviewby`**, typically
-  about a year out, so that the commitment is recorded in the source rather
-  than implied by when the PDF happened to be built.
+  is rebuilt. This is acceptable for a draft, since the archived PDF keeps
+  the date it was built with, but it is not suitable for the long term.
+- Released documents should set an explicit `\reviewby`, typically about
+  a year out, so that the commitment is recorded in the source rather than
+  implied by when the PDF happened to be built.
 
 ---
 
 ## 5. Lead responsibilities
 
 The system depends on leads running it, and every lead is learning it at
-the same time as the members, and no existing group has prior experience
-with it. The responsibilities divide into five areas.
+the same time as the members. The responsibilities divide into five areas.
 
 **Onboarding.** A new member completes two tasks in order, which together
 cover the whole toolchain on a document where mistakes have no
@@ -217,8 +214,8 @@ report or a one-page how-to rather than a design report.
 Keep the introductions repo private, and skim each new file for anything
 that should not be visible to the whole organisation before counting the
 task done. The privacy rules are stated in the starter file's header
-comment, in both guides, and in that repo's own README, since this is the
-document type most likely to attract oversharing.
+comment, in both guides, and in that repo's own README, because this is
+the document type where oversharing is most likely.
 
 **Reviewing.** For a document with status `In Review`, check the substance
 first and then the frame. The `FILL THIS IN` block should be complete,
@@ -249,8 +246,8 @@ like any other task.
 Two conventions apply to everyone and are worth enforcing early:
 
 - **Use `\openitem{}{}{}` instead of a TODO comment.** Open items are
-  collected into a visible table at the end of the document, whereas a TODO
-  buried in the source is easily overlooked and forgotten.
+  collected into a visible table at the end of the document, whereas a
+  TODO buried in the source is easily overlooked.
 - **Every figure and number needs a source.** A claim of "we measured it"
   without a date and a file path cannot be verified later.
 
@@ -258,15 +255,16 @@ Two conventions apply to everyone and are worth enforcing early:
 
 ## 6. Marks and branding
 
-The cover logo and the soft page-top watermark both come from the VUM logo in
-`figures/`. Colours in `teaminfo.tex` are the official Vanderbilt values:
-Black `#1C1C1C`, Vanderbilt Gold `#CFAE70`, and Oak `#946E24` for gold
-text that needs to meet contrast requirements. Gold is used for rules and
-fills only, because it does not pass contrast standards as body text on
-white.
+The cover logo and the soft page-top watermark both come from the VUM
+logo in `figures/`. The colours in `teaminfo.tex` are the official
+Vanderbilt values of Black `#1C1C1C`, Vanderbilt Gold `#CFAE70`, and Oak
+`#946E24`, the last of which serves gold text that needs to meet contrast
+requirements. Gold is used for rules and fills only, because it does not
+pass contrast standards as body text on white.
 
 **Marks on the cover.** Top left is the VUM team logo, and top right is
-the official Vanderbilt lockup. Both approved lockups ship in `figures/`:
+the official Vanderbilt lockup. Both approved lockups are included in
+`figures/`:
 
 | File | Use |
 |---|---|
@@ -290,12 +288,12 @@ StudentAffairsCommunications@vanderbilt.edu.
 
 ## 7. Troubleshooting
 
-**"Undefined control sequence".** A command was typed that does not
-exist. Check the spelling against `CHEATSHEET.md`. Overleaf highlights the
-line.
+**"Undefined control sequence".** The command name is misspelled or does
+not exist. Check the spelling against `CHEATSHEET.md`, and note that
+Overleaf highlights the affected line.
 
-**A figure does not show up.** The file must be in `figures/`, and the
-name is written **without the extension**, so `\fsfig{upright-fea}{caption}`
+**A figure does not appear.** The file must be in `figures/`, and the
+name is written without the extension, so `\fsfig{upright-fea}{caption}`
 refers to `figures/upright-fea.png`.
 
 **"Missing $ inserted".** A maths symbol like `_` or `^` was used outside
@@ -324,5 +322,5 @@ these errors are usually familiar to someone.
 
 ---
 
-*Owned by whichever lead owns documentation. If something in this file is
-wrong, fix it and commit the change.*
+*Maintained by the lead responsible for documentation. If something in
+this file is wrong, fix it and commit the change.*
